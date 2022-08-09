@@ -11,13 +11,13 @@ class Item
     @archived = false
   end
 
-  def move_to_archive
-    @archived = true if can_be_archived?
-  end
+  # def move_to_archive
+  #   @archived = true if can_be_archived?
+  # end
 
-  private
+  # private
 
-  def can_be_archived?
-    @published_date.to_date < Date.today.year - 10
-  end
+  # def can_be_archived?
+  #   @published_date.to_date < Date.today.year - 10
+  # end
 end
