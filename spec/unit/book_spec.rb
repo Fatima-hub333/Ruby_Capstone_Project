@@ -7,9 +7,9 @@ describe 'A book' do
 
   it 'should be an instance of the item' do
     expect(book.is_a?(Item)).to be true
-end
+  end
 
-it 'should have a published date' do
+  it 'should have a published date' do
     expect(book.published_date).to eq date
   end
   it 'should have a id' do
