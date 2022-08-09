@@ -17,39 +17,26 @@ class App
     gets.chomp.strip
   end
 
-def cases(command)
-  return unless %w[].include? command
+  def cases(command)
+    return unless %w[].include? command
 
-  { 1 => -> {} }[command].call
-end
+    { 1 => -> {} }[command].call
+  end
 
-def action(first)
-  command = call_input(first)
-  cases(command)
-  command
-end
+  def action(first)
+    command = call_input(first)
+    cases(command)
+    command
+  end
 
-def run
-  puts "Welcome, choose an option"
-  command = action(true)
-  while command != '13'
+  def run
+    puts 'Welcome, choose an option'
+    command = action(true)
+    while command != '13'
+      puts ' '
+      command = action(false)
+    end
     puts ' '
-    command = action(false)
-  end
-puts ' '
-puts 'Leaving the Catalogue...GoodBye TakeCare!'
+    puts 'Leaving the Catalogue...GoodBye TakeCare!'
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-

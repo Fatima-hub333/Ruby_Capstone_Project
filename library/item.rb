@@ -5,7 +5,7 @@ class Item
   attr_reader :id, :genre, :author, :source, :label, :published_date
   attr_accessor :archived
 
-  def initialize(objects, published_date, id = securerandom.uuid, archived:false)
+  def initialize(objects, published_date, id = securerandom.uuid, archived: false)
     @id = id
     @genre = objects[0]
     @author = objects[1]
@@ -16,7 +16,7 @@ class Item
   end
 
   def could_be_archived?
-      @published_date.to_date < Date.today - 10
+    @published_date.to_date < Date.today - 10
   end
 
   def move_to_archive
