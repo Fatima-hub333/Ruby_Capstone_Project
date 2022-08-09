@@ -1,5 +1,5 @@
-require_relative './lib/book'
-require_relative './lib/label'
+require_relative './library/book'
+require_relative './library/label'
 
 label = Label.new('Gift', 'Red')
 
@@ -10,13 +10,13 @@ book.label = label
 p book.move_to_archive
 
 p book.can_be_archived?
- 
-# puts 
+
+# puts
 
 # label.add_item(book)
 
 # p label
 
-# puts 
+# puts
 
 # p book

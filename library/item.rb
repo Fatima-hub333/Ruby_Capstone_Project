@@ -8,17 +8,13 @@ class Item
     @id = Random.rand(1..1000)
     @publish_date = Date.parse(publish_date)
     @archived = archived
-  end 
-
-  def move_to_archive
-    if can_be_archived?
-      @archived = true
-    else
-      @archived = false
-    end
   end
 
-  def label=(label)
+  def move_to_archive
+    @archived = can_be_archived?
+  end
+
+  def label = (label)
     @label = label
     label.items << self
   end
@@ -28,5 +24,4 @@ class Item
   def can_be_archived?
     Date.today.year - @publish_date.year > 10
   end
-
 end
