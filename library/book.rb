@@ -9,7 +9,10 @@ class Book < Item
     @cover_state = cover_state.downcase
   end
 
+  private
+
   def can_be_archived?
     Date.today.year - @publish_date.year > 10 || @cover_state == 'bad'
-  end
+  end 
+
 end
