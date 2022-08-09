@@ -9,9 +9,9 @@ describe 'A book' do
     expect(book.is_a?(Item)).to be true
   end
 
-  # it 'should have a published date' do
-  #   expect(book.published_date).to eq date
-  # end
+  it 'should have a published date' do
+    expect(book.published_date).to eq date
+  end
   # it 'should have a id' do
   #   expect(book.id).to eq 'the-item-id'
   # end
