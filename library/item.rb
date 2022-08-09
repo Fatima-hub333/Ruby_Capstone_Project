@@ -7,7 +7,6 @@ class Item
 
   def initialize(published_date, id = SecureRandom.uuid)
     @published_date = published_date
-    @archived = archived
     @id = id
     @archived = false
   end
