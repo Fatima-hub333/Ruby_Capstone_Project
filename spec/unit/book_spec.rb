@@ -12,9 +12,11 @@ describe 'A book' do
   it 'should have a published date' do
     expect(book.published_date).to eq date
   end
-  # it 'should have a id' do
-  #   expect(book.id).to eq 'the-item-id'
-  # end
+
+  it 'should have a id' do
+    expect(book.id).to eq 'the-item-id'
+  end
+  
   # it 'should overwrite parent method if cover_state is bad' do
   #   book.cover_state = 'bad'
   #   expect(book.can_be_archived?).to be true
