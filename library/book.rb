@@ -3,11 +3,12 @@ require 'securerandom'
 
 class Book < Item
   attr_reader :id
-  attr_accessor :cover_state, :archived, :genre, :author, :label, :published_date
+  attr_accessor :cover_state, :publisher, :archived, :genre, :author, :label, :published_date
 
-  def initialize(published_date, cover_state = 'good', id = SecureRandom.uuid, archived: false)
+  def initialize(published_date, publisher, cover_state = 'good', id = SecureRandom.uuid, archived: false)
     super(published_date, id, archived: archived)
     @published_date = published_date
+    @publisher = publisher
     @id = id
     @cover_state = cover_state
     move_to_archive
@@ -16,10 +17,8 @@ class Book < Item
   def to_json(*args)
     {
       JSON.create_id => self.class.name,
-      'genre' => @genre,
-      'author' => @author,
-      'label' => @label,
       'published_date' => @published_date.to_date,
+      'publisher' => @publisher,
       'id' => @id,
       'archived' => @archived,
       'cover_state' => @cover_state
@@ -28,14 +27,11 @@ class Book < Item
 
   def self.json_create(book)
     year, month, day = book['published_date'].split('-')
-    newbook = new(
+    new(
       Date.new(year.to_i, month.to_i, day.to_i),
-      book['cover_state'], book['id'], archived: book['archived']
+      book['publisher'], book['cover_state'],
+      book['id'], archived: book['archived']
     )
-    newbook.author = book['author']
-    newbook.genre = book['genre']
-    newbook.label = book['label']
-    newbook
   end
 
   private
