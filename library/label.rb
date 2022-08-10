@@ -3,8 +3,8 @@ class Label
 
   def initialize(title, color)
     @id = Random.rand(1..1000)
-    @title = title
-    @color = color
+    @title = title.downcase
+    @color = color.downcase
     @items = []
   end
 
