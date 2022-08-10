@@ -4,7 +4,7 @@ def main
   app = App.new
   app.greeter
   input = nil
-  while input != '4'
+  while input != '5'
     app.instructions
     input = gets.chomp
     options(input, app)
@@ -20,6 +20,8 @@ def options(input, app)
   when '2'
     app.list_all_labels
   when '3'
+    app.list_all_authors
+  when '4'
     app.add_book
   end
 end
