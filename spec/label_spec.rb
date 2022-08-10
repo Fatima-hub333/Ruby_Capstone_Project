@@ -16,7 +16,7 @@ describe Label do
       expect(label.items.length).to eq(0)
     end
 
-    it "add_items to @items instance var" do
+    it "add_items to label's @items instance var" do
       allow(label).to receive(:add_item).and_return(label.items.push("an item"))
       expect(label.items.length).to eq(1)
     end
