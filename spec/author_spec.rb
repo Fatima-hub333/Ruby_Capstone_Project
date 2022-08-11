@@ -1,4 +1,4 @@
-require 'author'
+require 'author.rb'
 
 describe Author do
   context 'To correctly instantiate an author object' do
