@@ -1,12 +1,11 @@
-require_relative './lib/book'
-require_relative './lib/label'
-require_relative './lib/author'
+require_relative 'book'
+require_relative 'label'
+require_relative 'author'
+require_relative 'storage'
 
 class App
   def initialize
-    @books = []
-    @labels = []
-    @authors = []
+    @storage = Storage.new
   end
 
   def greeter
@@ -51,28 +50,6 @@ class App
   end
 
   def add_book
-    print 'Enter Author first name: '
-    first_name = gets.chomp
-    print 'Enter Author last name: '
-    last_name = gets.chomp
-    print 'Enter publish date: '
-    publish_date = gets.chomp
-    print 'Enter publisher: '
-    publisher = gets.chomp
-    print 'Whats the cover state of the book? '
-    cover_state = gets.chomp
-    book = Book.new(publish_date, publisher, cover_state)
-    print 'Enter a label for your item eg. Gift, New: '
-    label_title = gets.chomp
-    print 'Enter a color for your label: '
-    label_color = gets.chomp
-    label = Label.new(label_title, label_color)
-    @labels << label
-    book.label=label
-    @books << book
-    author = Author.new(first_name, last_name)
-    @authors << author
-    book.author=author
-    puts
+    @storage.add_book
   end
 end
