@@ -1,1 +1,14 @@
-[{"title":"gift","color":"red"},{"title":"basic collection","color":"blue"}]
+[
+  {
+    "title": "new",
+    "color": "black"
+  },
+  {
+    "title": "gift",
+    "color": "red"
+  },
+  {
+    "title": "lost",
+    "color": "purple"
+  }
+]

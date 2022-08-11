@@ -6,6 +6,9 @@ require_relative 'storage'
 class App
   def initialize
     @storage = Storage.new
+    @storage.init_books
+    @storage.init_labels
+    @storage.init_authors
   end
 
   def greeter
