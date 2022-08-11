@@ -10,7 +10,7 @@ def main
     options(input, app)
   end
   puts
-  puts 'Thanks for using Stockify CLI!!'
+  puts 'Thanks for using Quckify CLI!!'
 end
 
 def options(input, app)

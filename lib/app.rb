@@ -12,7 +12,7 @@ class App
   end
 
   def greeter
-    print "Hello! Welcome to Stockify!\n\n"
+    print "Hello! Welcome to Quckify!\n\n"
   end
 
   def instructions
