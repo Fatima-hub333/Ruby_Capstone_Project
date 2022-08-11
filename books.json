@@ -1,0 +1,20 @@
+[
+  {
+    "author": "James Joyce",
+    "publish_date": "1912-04-05",
+    "publisher": "Elsevier",
+    "cover_state": "good"
+  },
+  {
+    "author": "Chuck Palaniuk",
+    "publish_date": "1999-03-06",
+    "publisher": "Rare",
+    "cover_state": "good"
+  },
+  {
+    "author": "Jose Luis Borges",
+    "publish_date": "1959-06-07",
+    "publisher": "Mar de Plata",
+    "cover_state": "good"
+  }
+]
