@@ -77,7 +77,7 @@ class Storage
     @labels << { 'title' => label.title.to_s, 'color' => label.color }
     book.label=label
     author = Author.new(first_name, last_name)
-    @authors << { 'first_name' => author.first_name.to_s, 'last_name' => author.last_name.to_s } 
+    @authors << { 'first_name' => author.first_name.to_s, 'last_name' => author.last_name.to_s }
     book.author=author
     @books << { 'author' => author.first_name + ' ' + author.last_name, 'publish_date' => book.publish_date.to_s, 'publisher' => book.publisher.to_s, 'cover_state' => book.cover_state.to_s }
     save_book
