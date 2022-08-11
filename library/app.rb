@@ -23,30 +23,15 @@ class App
   end
 
   def list_all_books
-    if @books.count.zero?
-      puts "There are not registered books. Please add one!\n\n"
-    end
-    @books.each do |item|
-      puts "[#{item.class}] Publisher: #{item.publisher} Published date: #{item.publish_date} Cover_state: #{item.cover_state} Label: #{item.label.title}\n\n"
-    end
+    @storage.list_all_books
   end
 
   def list_all_labels
-    if @labels.count.zero?
-      puts "There are not registered labels. Please add one!\n\n"
-    end
-    @labels.each do |item|
-      puts "[#{item.class}] Name: #{item.title} Color: #{item.color}\n\n"
-    end
+    @storage.list_all_labels
   end
 
   def list_all_authors
-    if @authors.count.zero?
-      puts "There are not registered authors. Please add one!\n\n"
-    end
-    @authors.each do |item|
-      puts "[#{item.class}] Name: #{item.first_name} #{item.last_name}\n\n"
-    end
+    @storage.list_all_authors
   end
 
   def add_book

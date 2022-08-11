@@ -30,15 +30,39 @@ class Storage
     @authors = authors_data
   end
 
-  # def list_all_books
-  # end
+  def list_all_books
+    if @books.count.zero?
+      puts "There are not registered books. Please add one!\n\n"
+    end
+    @books.each do |item|
+      puts "[Book] Author: #{item['author']}, Publish_date: #{item['publish_date']}, Publisher: #{item['publisher']} Cover_state: #{item['cover_state']}\n\n"
+    end
+  end
+
+  def list_all_labels
+    if @labels.count.zero?
+      puts "There are not registered labels. Please add one!\n\n"
+    end
+    @labels.each do |item|
+      puts "[Label] Title: #{item['title']} Color: #{item['color']}\n\n"
+    end
+  end
+
+  def list_all_authors
+    if @authors.count.zero?
+      puts "There are not registered authors. Please add one!\n\n"
+    end
+    @authors.each do |item|
+      puts "[Author] Name: #{item['first_name']} #{item['last_name']}\n\n"
+    end
+  end
 
   def add_book
     print 'Enter Author first name: '
     first_name = gets.chomp
     print 'Enter Author last name: '
     last_name = gets.chomp
-    print 'Enter publish date: '
+    print 'Enter publish date (YYYY-MM-DD): '
     publish_date = gets.chomp
     print 'Enter publisher: '
     publisher = gets.chomp
@@ -55,7 +79,7 @@ class Storage
     author = Author.new(first_name, last_name)
     @authors << { 'first_name' => author.first_name.to_s, 'last_name' => author.last_name.to_s } 
     book.author=author
-    @books << { 'author' => book.author.to_s, 'publish_date' => book.publish_date.to_s, 'publisher' => book.publisher.to_s, 'cover_state' => book.cover_state.to_s }
+    @books << { 'author' => author.first_name + ' ' + author.last_name, 'publish_date' => book.publish_date.to_s, 'publisher' => book.publisher.to_s, 'cover_state' => book.cover_state.to_s }
     save_book
     save_label
     save_author
@@ -66,7 +90,7 @@ class Storage
   def save_book
     data = []
     @books.each do |book|
-      data << ({ publish_date: book['publish_date'], publisher: book['publisher'], cover_state: book['cover_state'] })
+      data << ({ 'author': book['author'], publish_date: book['publish_date'], publisher: book['publisher'], cover_state: book['cover_state'] })
     end
     File.open('books.json', 'w') { |f| f.puts data.to_json }
   end
