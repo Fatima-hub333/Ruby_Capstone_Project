@@ -2,14 +2,14 @@ require 'author.rb'
 
 describe Author do
   context 'To correctly instantiate an author object' do
-    let(:author) { Author.new('James', 'Joyce') }
+    let(:author) { Author.new('Ayesha', 'Abbasi') }
 
     it 'can add and access the publish first name property' do
-      expect(author.first_name).to eq('James')
+      expect(author.first_name).to eq('Ayesha')
     end
 
     it 'can add and access the publish last name property' do
-      expect(author.last_name).to eq('Joyce')
+      expect(author.last_name).to eq('Abbasi')
     end
 
     it "can have access to the author's object items storage" do
